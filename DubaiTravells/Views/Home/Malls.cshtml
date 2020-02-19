@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Malls";
+}
+
+<section class="restaurants-area mt-del">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>Malls</h3>
+            </div>
+            <div class="col-md-6 view-selector">
+                <ul>
+                    <li data-ref="1">Dubai Mall</li>
+                    <li data-ref="2">City Walk Mall</li>
+                    <li data-ref="3">Al Barsha Mall</li>
+                    <li data-ref="4">Mercato Mall</li>
+                    <li data-ref="5">Marina Mall</li>
+                </ul>
+            </div>
+            <div class="col-md-6 view-container">
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/mall1.png" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        Dubai Mall<br />
+                        Financial Center Rd - Dubai - United Arab Emirates
+                    </p>
+                </div>
+
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/mall2.jpg" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        City Walk Mall<br />
+                        Al Safa Street City Walk - Dubai - United Arab Emirates
+                    </p>
+                </div>
+
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/mall3.jpg" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        Al Barsha Mall<br />
+                        23rd St - Dubai - United Arab Emirates
+                    </p>
+                </div>
+
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/mall4.jpg" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        Mercato Mall<br />
+                        Jumeirah Beach Rd - Dubai - United Arab Emirates
+                    </p>
+                </div>
+
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/mall5.jpg" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        Marina Mall<br />
+                        Sheikh Zayed Rd - إمارة دبيّ - United Arab Emirates
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts
+    {
+    <script>
+        $(document).ready(function () {
+            $(".view-selector ul li").on('click', function (e) {
+                var index = $(this).data('ref');
+
+                console.log(index);
+
+                $(".view-selector ul li").css('color', 'white');
+
+                $(this).css('color','blue');
+
+                $(".view-container .restaurant").hide();
+
+                $(".view-container .restaurant").eq(index).show();
+            });
+
+        });
+    </script>
+}

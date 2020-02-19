@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Restaurants";
+}
+
+
+<section class="restaurants-area mt-del">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>Restaurants</h3>
+            </div>
+            <div class="col-md-6 view-selector" id="sub-nav">
+                <ul>
+                    <li data-ref="1"><a href="#">3 Fils</a></li>
+                    <li data-ref="2"><a href="#">Hakkasan</a></li>
+                    <li data-ref="3"><a href="#">Folly by Nick &Aacute; Scott</a></li>
+                    <li data-ref="4"><a href="#">Al Nafoorah</a></li>
+                    <li data-ref="5"><a href="#">Ayubowan</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 view-container">
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/restaurant1.jpg" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        3 Fils<br />
+                        Open Mon-Wed 1pm-11pm; Thu-Sat noon-midnight. Jumeirah Fishing Harbour, Jumeirah 2 (056 273 0030).
+                    </p>
+                </div>
+
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/restaurant2.jpg" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        Hakkasan<br />
+                        Open daily noon-4pm; 7pm-1am. Jumeirah Emirates Towers, Sheikh Zayed Road (04 384 8484).
+                    </p>
+                </div>
+
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/restaurant3.jpg" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        Folly by Nick &Aacute; Scott<br />
+                        Open Sun-Thu noon-2.30pm; Fri-Sat noon-3.30pm; daily 5pm-11pm. Souk Madinat Jumeirah, Umm Suqeim (04 430 8535).
+                    </p>
+                </div>
+
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/restaurant4.jpg" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        Al Nafoorah<br />
+                        Open Sun-Thu noon-3.30pm, 6pm-11.30pm; Fri-Sat noon-4pm, 6pm-11.30pm. Jumeirah Emirates Towers, Sheikh Zayed Road (04 319 8760).
+                    </p>
+                </div>
+
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/restaurant5.jpg" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        Ayubowan<br />
+                        Open daily 10am-11pm. Lake Point Tower, Cluster N, Jumeirah Lake Towers (04 452 1007).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts
+    {
+    <script>
+        $(document).ready(function () {
+            $(".view-selector ul li").on('click', function (e) {
+                var index = $(this).data('ref');
+
+                console.log(index);
+
+                $(".view-selector ul li").css('color', 'white');
+
+                $(this).css('color','blue');
+
+                $(".view-container .restaurant").hide();
+
+                $(".view-container .restaurant").eq(index).show();
+            });
+
+        });
+    </script>
+}

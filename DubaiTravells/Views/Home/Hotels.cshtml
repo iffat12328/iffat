@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "Hotels";
+}
+
+
+<section class="restaurants-area mt-del">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>Hotels</h3>
+            </div>
+            <div class="col-md-6 view-selector">
+                <ul>
+                    <li data-ref="1"><a href="#">Burj Al Arab Jumeirah</a></li>
+                    <li data-ref="2"><a href="#">JW Marriott Marquis Hotel Dubai</a></li>
+                    <li data-ref="3"><a href="#">Roda Al Murooj Downtown Dubai</a></li>
+                    <li data-ref="4"><a href="#">Palazzo Versace Dubai</a></li>
+                    <li data-ref="5"><a href="#">The H Dubai</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 view-container">
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/hotel1.png" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        Burj Al Arab Jumeirah<br />
+                        Jumeirah St - Dubai - United Arab Emirates•+971 4 301 7777
+                    </p>
+                </div>
+
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/hotel2.jpg" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        JW Marriott Marquis Hotel Dubai<br />
+                        Sheikh Zayed Rd - Dubai - United Arab Emirates•+971 4 414 0000
+                    </p>
+                </div>
+
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/hotel3.jpg" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        Roda Al Murooj Downtown Dubai<br />
+                        Opp.Dubai Mall - Al Sa'ada St - Dubai - United Arab Emirates•+971 4 321 1111
+                    </p>
+                </div>
+
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/mall4.jpg" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        Palazzo Versace Dubai<br />
+                        Jaddaf Waterfront - Dubai - United Arab Emirates•+971 4 556 8888
+                    </p>
+                </div>
+
+                <div class="restaurant">
+                    <img src="~/images/img/dubai/mall5.jpg" class="img-fluid" alt="Responsive image">
+
+                    <p>
+                        The H Dubai<br />
+                        Sheikh Zayed Rd - Dubai - United Arab Emirates•+971 4 501 8888
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts
+    {
+    <script>
+        $(document).ready(function () {
+
+
+            $(".view-selector ul li").on('click', function (e) {
+                var index = $(this).data('ref');
+
+                console.log(index);
+
+                $(".view-selector ul li").css('color', 'white');
+
+                $(this).css('color', 'blue');
+
+                $(".view-container .restaurant").hide();
+
+                $(".view-container .restaurant").eq(index).show();
+            });
+
+            $(".view-container .restaurant").hide();
+            $(".view-container .restaurant").eq(2).show();
+            $(".view-selector ul li").eq(2).css("color", "blue");
+
+        });
+    </script>
+}

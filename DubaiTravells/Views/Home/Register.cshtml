@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+
+
+<section class="contact-area mt-del">
+    <div class="container contact-form">
+        <div class="contact-image">
+            <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
+        </div>
+        <form method="post">
+            <h3>Register a new aacount with us</h3>
+            <div class="row d-flex align-content-center">
+                <div class="col-8 offset-md-2">
+
+                    <div class="form-group">
+                        <input type="text" name="fname" class="form-control" placeholder="First Name *" value="" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="lname" class="form-control" placeholder="Last Name *" value="" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="nationality" class="form-control" placeholder="Nationality *" value="" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Email *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Your Password *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="btnSubmit" class="btnContact mx-auto" value="register"/>
+                    </div>
+
+                    <div class="form-group">
+                        <p>
+                           Already a member? <a asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</section>
